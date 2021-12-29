@@ -1,46 +1,20 @@
 
 <div class="container">
   <div class="header">
-    <div class="prvi select">
-    <label for="Chose Month">Choose a month:</label>
-    <select name="months" id="month-select">
-      <option value="">Please choose month</option>
-      <option value="1">January</option>
-      <option value="2">February</option>
-      <option value="3">March</option>
-      <option value="4">April</option>
-      <option value="5">May</option>
-      <option value="6">June</option>
-      <option value="7">July</option>
-      <option value="8">August</option>
-      <option value="9">September</option>
-      <option value="10">October</option>
-      <option value="11">November</option>
-      <option value="12">December</option>
-  </select>
+    <div class="LeviDiv">
+    <div class="CentralniDiv">
+      <fa-icon [icon]="faAngleLeft" (click)="PromeniMesec(-1)"></fa-icon>
+      <label class="Labela">{{Months[curentD.monthID].text}}</label>
+      <fa-icon [icon]="faAngleRight" (click)="PromeniMesec(1)"></fa-icon>
 </div>
-  <div class="drugi-select">
-    <label for="standard-select">Year :</label>
-      <select id="standard-select">
-        <option value="Option 1">2010</option>
-        <option value="Option 2">2011</option>
-        <option value="Option 3">2012</option>
-        <option value="Option 4">2013</option>
-        <option value="Option 5">2014</option>
-        <option value="Option 6">2015</option>
-        <option value="Option 7">2016</option>
-        <option value="Option 8">2017</option>
-        <option value="Option 9">2018</option>
-        <option value="Option 10">2019</option>
-        <option value="Option 11">2020</option>
-        <option value="Option 12">2021</option>
 
-        <option value="Option length">
-      </option>
-    </select>
-</div>
+    <div class="DesniDiv">
+
+      <input type="number"id="myNumber" step="1"
+       min="2010">  
+    </div>
  
-  
+</div>
   </div>
   <div class="mainbody">
     <!-- <ul class="Lista" *ngFor="let Day of Days">
@@ -48,7 +22,7 @@
         <span>{{this.Days}}</span>
       </li>
   </ul> -->
-    <div *ngFor="let Day of DaysI">{{Day.text}}</div>
-    <div *ngFor="let Day of DaysII"></div>
+    <div class="PContainer" *ngFor="let Day of DaysI">{{Day.text}}</div>
+    <div class="PContainer"*ngFor="let Day of DaysII ; let i=index;">{{Day?.text}}</div>
   </div>
 </div> 
