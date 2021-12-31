@@ -65,8 +65,7 @@
 .CentralniDiv{  
     font-family:"QucikSand",sans-serif;
     text-align: center;
-    margin-top: 10px;
-    margin-bottom: 1px;
+    top:-25px
 }
 .Labela{
     width: 10px;
@@ -81,4 +80,9 @@
     flex-wrap: wrap;
     justify-content: space-around;
     align-items: center;
+    font-family: Licorice;
+}
+
+.LeviDiv{
+    top: 0px;
 }

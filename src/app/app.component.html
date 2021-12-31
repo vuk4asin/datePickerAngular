@@ -2,6 +2,7 @@
 <div class="container">
   <div class="header">
     <div class="LeviDiv">
+      <label>{{curentD.monthID}}</label>
     <div class="CentralniDiv">
       <fa-icon [icon]="faAngleLeft" (click)="PromeniMesec(-1)"></fa-icon>
       <label class="Labela">{{Months[curentD.monthID].text}}</label>
@@ -10,8 +11,8 @@
 
     <div class="DesniDiv">
 
-      <input type="number"id="myNumber" step="1"
-       min="2010">  
+      <input type="number" id="myNumber" step="1" [value]="curentD.year"
+       min="2010" (change)="setYear($event)">  
     </div>
  
 </div>
@@ -23,6 +24,6 @@
       </li>
   </ul> -->
     <div class="PContainer" *ngFor="let Day of DaysI">{{Day.text}}</div>
-    <div class="PContainer"*ngFor="let Day of DaysII ; let i=index;">{{Day?.text}}</div>
+    <div class="PContainer" *ngFor="let Day of DaysII ; let i=index;">{{Day?.text}}</div>
   </div>
 </div> 

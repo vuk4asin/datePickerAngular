@@ -3,6 +3,7 @@ import { Component, ComponentFactoryResolver, Inject, Input, OnInit } from '@ang
 import { text } from '@fortawesome/fontawesome-svg-core';
 import { faAngleLeft, faOtter } from '@fortawesome/free-solid-svg-icons';
 import { faAngleRight } from '@fortawesome/free-solid-svg-icons';
+import { faAlignJustify } from '@fortawesome/free-solid-svg-icons';
 
 
 export interface selectedDate{
@@ -27,6 +28,7 @@ export class AppComponent {
   public DaysI: any[];
   faAngleLeft = faAngleLeft;
   faAngleRight= faAngleRight;
+  faalignJustify= faAlignJustify;
   public curentD: selectedDate;
   public DaysII:Days[];
   public stepD: number;
@@ -36,7 +38,7 @@ export class AppComponent {
     this.stepD = 0;
     this.curentD = {} as selectedDate;
     this.setCurentDate();
-    this.Months = [
+    this.Months= [
       {id: 1, text: 'January'},
       {id: 2, text: 'Februar'},
       {id: 3, text: 'March'},
@@ -73,7 +75,12 @@ export class AppComponent {
     const d = new Date();
     this.curentD.monthID = d.getMonth();
     this.stepD = this.curentD.monthID;
+    this.curentD.year = d.getFullYear();
   }
+  setYear(e: Event){
+    this.curentD.year  = parseInt((<HTMLInputElement>e.currentTarget).value);
+  }
+  
 
     SetCalendar(d?:Date){
       let dTemp: Date;
@@ -105,13 +112,25 @@ export class AppComponent {
 
     PromeniMesec(step: number){
       this.stepD += step;
-      if(this.stepD > 11)
-        this.stepD = 0;
+      if(this.stepD > 11){
+        this.stepD = 1;
+        this.curentD.year++;
+        console.log(this.curentD)
+      }
+        
       if(this.stepD < 0)
+      {
         this.stepD = 11;
+        this.curentD.year--;
+      }
       this.curentD.monthID = this.stepD;
     }
-    
+
+    setujDatum(){
+      for(let i = 0 ; i<11 ; i++)
+      var d = this.Months[i]
+
+    }
 
    
 
@@ -119,7 +138,6 @@ export class AppComponent {
     setTimeout(() => {
       console.log(this.width)
     }, 1);
-
   }
 
 
