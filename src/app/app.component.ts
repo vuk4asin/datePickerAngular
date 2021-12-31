@@ -70,6 +70,7 @@ export class AppComponent {
     }
     console.log(this.DaysII)
     this.SetCalendar();
+    
   }
   setCurentDate(){
     const d = new Date();
@@ -113,7 +114,7 @@ export class AppComponent {
     PromeniMesec(step: number){
       this.stepD += step;
       if(this.stepD > 11){
-        this.stepD = 1;
+        this.stepD = 0;
         this.curentD.year++;
         console.log(this.curentD)
       }
@@ -126,13 +127,7 @@ export class AppComponent {
       this.curentD.monthID = this.stepD;
     }
 
-    setujDatum(){
-      for(let i = 0 ; i<11 ; i++)
-      var d = this.Months[i]
-
-    }
-
-   
+ 
 
   ngOnInit():void {
     setTimeout(() => {
