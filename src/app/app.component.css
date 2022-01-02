@@ -64,11 +64,12 @@
 
 .CentralniDiv{  
     font-family:"QucikSand",sans-serif;
+    font-size: 17px;
     text-align: center;
-    top:-25px
+    top:-27px
 }
 .Labela{
-    width: 10px;
+    width: 15px;
 }
 
 .Lista{
@@ -80,9 +81,11 @@
     flex-wrap: wrap;
     justify-content: space-around;
     align-items: center;
-    font-family: Licorice;
+    font-family:"bold";
 }
 
 .LeviDiv{
-    top: 0px;
+    top: -1px;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 10px;
 }

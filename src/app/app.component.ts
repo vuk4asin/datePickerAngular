@@ -35,8 +35,10 @@ export class AppComponent {
   @Input('width') width!: string;
   @Input('height') height!: string;
   constructor(){
+    
     this.stepD = 0;
     this.curentD = {} as selectedDate;
+
     this.setCurentDate();
     this.Months= [
       {id: 1, text: 'January'},
@@ -68,7 +70,7 @@ export class AppComponent {
       d.text = "";
       this.DaysII[i] = d;
     }
-    console.log(this.DaysII)
+    console.log(this.DaysII);
     this.SetCalendar();
   }
   setCurentDate(){
@@ -76,6 +78,8 @@ export class AppComponent {
     this.curentD.monthID = d.getMonth();
     this.stepD = this.curentD.monthID;
     this.curentD.year = d.getFullYear();
+    this.curentD.day= d.getDay().toString();
+    console.log(this.curentD);
   }
   setYear(e: Event){
     this.curentD.year  = parseInt((<HTMLInputElement>e.currentTarget).value);
@@ -103,7 +107,6 @@ export class AppComponent {
       let n = this.DaysII[33];
       let b = n.id;
     
-      console.log(b);
       n.text="1";
       let k = this.DaysII[34];
       k.text="2";
@@ -113,7 +116,7 @@ export class AppComponent {
     PromeniMesec(step: number){
       this.stepD += step;
       if(this.stepD > 11){
-        this.stepD = 1;
+        this.stepD = 0;
         this.curentD.year++;
         console.log(this.curentD)
       }
@@ -126,13 +129,7 @@ export class AppComponent {
       this.curentD.monthID = this.stepD;
     }
 
-    setujDatum(){
-      for(let i = 0 ; i<11 ; i++)
-      var d = this.Months[i]
 
-    }
-
-   
 
   ngOnInit():void {
     setTimeout(() => {
