@@ -1,15 +1,17 @@
-import { IfStmt } from '@angular/compiler';
-import { Component, ComponentFactoryResolver, Inject, Input, OnInit } from '@angular/core';
+import { Component, ComponentFactoryResolver, Input, OnInit } from '@angular/core';
 import { text } from '@fortawesome/fontawesome-svg-core';
 import { faAngleLeft, faOtter } from '@fortawesome/free-solid-svg-icons';
 import { faAngleRight } from '@fortawesome/free-solid-svg-icons';
 import { faAlignJustify } from '@fortawesome/free-solid-svg-icons';
+import { identity } from 'rxjs';
+
 
 
 export interface selectedDate{
   monthID: number,
   year: number,
-  day: string
+  day: string, 
+  dateT: string
 };
 
 export interface Days{
@@ -40,6 +42,8 @@ export class AppComponent {
     this.curentD = {} as selectedDate;
 
     this.setCurentDate();
+  
+  
     this.Months= [
       {id: 1, text: 'January'},
       {id: 2, text: 'Februar'},
@@ -64,7 +68,7 @@ export class AppComponent {
       {id: 7, text: 'Sunday'},
     ];
     this.DaysII= new Array<Days>(35);
-    for(let i =0; i<35;i++){
+    for(let i = 0; i<35;i++){
       let d = {} as Days;
       d.id = i;
       d.text = "";
@@ -72,15 +76,22 @@ export class AppComponent {
     }
     console.log(this.DaysII);
     this.SetCalendar();
-    
+    this.uhvatiDiv()
+  
   }
   setCurentDate(){
     const d = new Date();
-    this.curentD.monthID = d.getMonth();
-    this.stepD = this.curentD.monthID;
+    this.curentD.monthID = d.getMonth()   ;
+    console.log(this.curentD.monthID);
+
+    this.stepD = this.curentD.monthID ;
     this.curentD.year = d.getFullYear();
-    this.curentD.day= d.getDay().toString();
-    console.log(this.curentD);
+    this.curentD.day= d.getDay().toLocaleString()  ;
+    console.log(this.curentD.day);
+    const s = this.curentD.year.toString() + '/' + this.curentD.monthID + 1  + '/' + this.curentD.day.toString();
+    this.curentD.dateT = s;
+
+
   }
   setYear(e: Event){
     this.curentD.year  = parseInt((<HTMLInputElement>e.currentTarget).value);
@@ -91,7 +102,7 @@ export class AppComponent {
       let dTemp: Date;
       let startDay: string;
       let endDay: string;
-      if(d != undefined){
+      if(d!= undefined){
         dTemp = d;
       }
       else{
@@ -116,6 +127,7 @@ export class AppComponent {
 
     PromeniMesec(step: number){
       this.stepD += step;
+      console.log(this.curentD)
       if(this.stepD > 11){
         this.stepD = 0;
         this.curentD.year++;
@@ -130,10 +142,25 @@ export class AppComponent {
       this.curentD.monthID = this.stepD;
     }
 
+    uhvatiDiv(){
+
+          for(let i=0; i<35;i++){
+            const select:any= this.DaysII[i];
+            if(select != undefined){
+              return console.log("greska");
+            }
+              else {
+              if(select[i].id == this.DaysII[i].id){
+                var obj = document.getElementById("PContainer");
+                obj?.style.backgroundColor == "rgb(197, 226, 232)";
+            } 
+          }
+        }
+    }
 
   ngOnInit():void {
     setTimeout(() => {
-      console.log(this.width)
+      
     }, 1);
   }
 

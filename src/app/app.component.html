@@ -1,11 +1,10 @@
-
 <div class="container">
   <div class="header">
     <div class="LeviDiv">
-      <label>{{ curentD.day + '/' + curentD.monthID + '/' +  curentD.year.toString()}}</label>
+      <label>{{ curentD.dateT }}</label>
     <div class="CentralniDiv">
       <fa-icon [icon]="faAngleLeft" (click)="PromeniMesec(-1)"></fa-icon>
-      <label class="Labela">{{Months[curentD.monthID].text}}</label>
+      <label class="Labela">{{Months[curentD.monthID ].text}}</label>
       <fa-icon [icon]="faAngleRight" (click)="PromeniMesec(1)"></fa-icon>
 </div>
  
