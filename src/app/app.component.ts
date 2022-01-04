@@ -72,6 +72,7 @@ export class AppComponent {
     }
     console.log(this.DaysII);
     this.SetCalendar();
+    
   }
   setCurentDate(){
     const d = new Date();
@@ -128,7 +129,6 @@ export class AppComponent {
       }
       this.curentD.monthID = this.stepD;
     }
-
 
 
   ngOnInit():void {
