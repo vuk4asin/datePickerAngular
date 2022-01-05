@@ -1,8 +1,8 @@
 import { Component, ComponentFactoryResolver, Input, OnInit } from '@angular/core';
 import { text } from '@fortawesome/fontawesome-svg-core';
-import { faAngleLeft, faOtter } from '@fortawesome/free-solid-svg-icons';
+import { faAngleLeft } from '@fortawesome/free-solid-svg-icons';
 import { faAngleRight } from '@fortawesome/free-solid-svg-icons';
-import { faAlignJustify } from '@fortawesome/free-solid-svg-icons';
+import { faAddressCard } from '@fortawesome/free-solid-svg-icons';
 import { identity } from 'rxjs';
 
 
@@ -28,9 +28,11 @@ export class AppComponent {
   title = 'DatePicker';
   public Months: any[];
   public DaysI: any[];
-  faAngleLeft = faAngleLeft;
-  faAngleRight= faAngleRight;
-  faalignJustify= faAlignJustify;
+  faAngleLeft=faAngleLeft;
+  faAngleRight=faAngleRight;
+  faAddressCard=faAddressCard;
+
+
   public curentD: selectedDate;
   public DaysII:Days[];
   public stepD: number;
@@ -46,7 +48,7 @@ export class AppComponent {
   
     this.Months= [
       {id: 1, text: 'January'},
-      {id: 2, text: 'Februar'},
+      {id: 2, text: 'February'},
       {id: 3, text: 'March'},
       {id: 4, text: 'April'},
       {id: 5, text: 'May'},
@@ -76,7 +78,8 @@ export class AppComponent {
     }
     console.log(this.DaysII);
     this.SetCalendar();
-    this.uhvatiDiv()
+    /*this.uhvatiDiv();*/
+
   
   }
   setCurentDate(){
@@ -88,7 +91,7 @@ export class AppComponent {
     this.curentD.year = d.getFullYear();
     this.curentD.day= d.getDay().toLocaleString()  ;
     console.log(this.curentD.day);
-    const s = this.curentD.year.toString() + '/' + this.curentD.monthID + 1  + '/' + this.curentD.day.toString();
+    const s = this.curentD.monthID + 1  + '-' + this.curentD.day.toString() + '-' + this.curentD.year.toString() ;
     this.curentD.dateT = s;
 
 
@@ -125,6 +128,11 @@ export class AppComponent {
 
     }
 
+    reserve(){
+      console.log('res');
+    }
+
+
     PromeniMesec(step: number){
       this.stepD += step;
       console.log(this.curentD)
@@ -142,10 +150,24 @@ export class AppComponent {
       this.curentD.monthID = this.stepD;
     }
 
-    uhvatiDiv(){
+    /*FresDiv(){
+      const div = document.getElementsByClassName("PContainer");
+      console.log(div);
+    }*/
+
+    pickAdate(e: Event){
+      console.log((<HTMLDivElement>e.currentTarget).innerHTML);
+      (<HTMLDivElement>e.currentTarget).style.backgroundColor = 'rgb(126, 155, 166)';
+      const message = alert("Date selected");
+
+    }
+
+   
+    /*uhvatiDiv(){
 
           for(let i=0; i<35;i++){
-            const select:any= this.DaysII[i];
+            const select:any=this.DaysII;
+            console.log(select)
             if(select != undefined){
               return console.log("greska");
             }
@@ -156,14 +178,15 @@ export class AppComponent {
             } 
           }
         }
-    }
-
+       }
+*/
   ngOnInit():void {
     setTimeout(() => {
       
     }, 1);
   }
-
+  
+  
 
 
 
