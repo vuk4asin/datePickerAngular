@@ -1,12 +1,12 @@
 
 body {
-    width: 360px;
+    width: 340px;
     margin: 0 auto;
     padding: 35px;
   }
   
   div.elem-group {
-    margin: 10px 0;
+    margin: 9px 0;
   }
   
   div.elem-group.inlined {
@@ -18,16 +18,16 @@ body {
   
   label {
     display: block;
-    font-family: 'Nanum Gothic';
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;;
     padding-bottom: 10px;
-    font-size: 0.9em;
+    font-size: 0.8em;
   }
   
   input, select, textarea {
     border-radius: 2px;
     border: 2px solid #777;
     box-sizing: border-box;
-    font-size: 0.9em;
+    font-size: 0.8em;
     font-family: 'Nanum Gothic';
     width: 100%;
     padding: 10px;
