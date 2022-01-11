@@ -1,6 +1,14 @@
-
+#Glavni{
+  background:rgb(218, 229, 232);
+  position: relative;
+  top:0;
+  bottom: 0;
+  left:50px;
+  right: 400px;
+}
 body {
-    width: 340px;
+    width: 400px;
+    height: 190px;
     margin: 0 auto;
     padding: 35px;
   }

@@ -7,6 +7,7 @@ import { identity } from 'rxjs';
 
 
 
+
 export interface selectedDate{
   monthID: number,
   year: number,
@@ -35,15 +36,15 @@ export class DatePickerComponent implements OnInit {
   public curentD: selectedDate;
   public DaysII:Days[];
   public stepD: number;
+  public show: boolean=false;
   @Input('width') width!: string;
   @Input('height') height!: string;
   constructor(){
-    
+
     this.stepD = 0;
     this.curentD = {} as selectedDate;
-
     this.setCurentDate();
-  
+   
   
     this.Months= [
       {id: 1, text: 'January'},
@@ -75,11 +76,9 @@ export class DatePickerComponent implements OnInit {
       d.text = "";
       this.DaysII[i] = d;
     }
-    console.log(this.DaysII);
+    
     this.SetCalendar();
-    /*this.uhvatiDiv();*/
 
-  
   }
   setCurentDate(){
     const d = new Date();
@@ -99,6 +98,9 @@ export class DatePickerComponent implements OnInit {
     this.curentD.year  = parseInt((<HTMLInputElement>e.currentTarget).value);
   }
   
+  reserve(){
+    console.log('click')
+  }
 
     SetCalendar(d?:Date){
       let dTemp: Date;
@@ -127,11 +129,6 @@ export class DatePickerComponent implements OnInit {
 
     }
 
-    reserve(){
-      console.log('res');
-    }
-
-
     PromeniMesec(step: number){
       this.stepD += step;
       console.log(this.curentD)
@@ -149,36 +146,30 @@ export class DatePickerComponent implements OnInit {
       this.curentD.monthID = this.stepD;
     }
 
-    /*FresDiv(){
-      const div = document.getElementsByClassName("PContainer");
-      console.log(div);
-    }*/
+  
+    FresDiv(index : number){
+      let id  = (<HTMLInputElement>document.getElementById('PContainer'+ index)).value;
+      console.log('id :' + id);
+    }
 
     pickAdate(e: Event){
       console.log((<HTMLDivElement>e.currentTarget).innerHTML);
-      (<HTMLDivElement>e.currentTarget).style.backgroundColor = 'rgb(126, 155, 166)';
-      const message = alert("Date selected");
-
+      console.log((<HTMLDivElement>e.currentTarget).innerHTML.indexOf);
+      (<HTMLDivElement>e.currentTarget).style.backgroundColor = 'rgb(126,155,166)';
+    
     }
 
-   
-    /*uhvatiDiv(){
+    Prikazi(){
+      this.show = !this.show;
+      console.log(this.show);
+      
+      console.log('Pritisnuto')
+    }
 
-          for(let i=0; i<35;i++){
-            const select:any=this.DaysII;
-            console.log(select)
-            if(select != undefined){
-              return console.log("greska");
-            }
-              else {
-              if(select[i].id == this.DaysII[i].id){
-                var obj = document.getElementById("PContainer");
-                obj?.style.backgroundColor == "rgb(197, 226, 232)";
-            } 
-          }
-        }
-       }
-*/
+    
+
+   
+  
   ngOnInit():void {
     setTimeout(() => {
       

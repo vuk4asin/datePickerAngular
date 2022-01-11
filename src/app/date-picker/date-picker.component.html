@@ -17,16 +17,15 @@
       <form></form>
   </div>
     </div>
+   
     <div class="mainbody">
-      <!-- <ul class="Lista" *ngFor="let Day of Days">
-        <li>
-          <span>{{this.Days}}</span>
-        </li>
-    </ul> -->
+    
       <div class="PContainer" *ngFor="let Day of DaysI">{{Day.text}}</div>
-      <div class="PContainer" *ngFor="let Day of DaysII ; let i=index;" (click)="pickAdate($event)" >{{Day?.text}}</div>
+      
+      <div class="PContainer" *ngFor="let Day of DaysII ; let i=index;" (click)="pickAdate($event); Prikazi()">{{Day?.text}}</div>
+     
+      <app-form *ngIf="show"></app-form>      
     </div>
-    <router-outlet></router-outlet>
-  </div> 
-  
+
+  </div>  
   

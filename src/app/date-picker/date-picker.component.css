@@ -9,7 +9,8 @@
 }
 
 .container {
-    width:790px;
+    width: fit-content;
+
     margin:0 auto;
     border:2px solid #fff;
     box-shadow:0px 2px 7px #292929;
@@ -27,17 +28,23 @@
     border: solid rgb(216,216,214);
     border-width:2px 0;
     display: flex;
+    flex-direction: column;
     flex-wrap: wrap;
     justify-content: space-around;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-size: 0.8em;
+    margin-right: 20px;
+   
 }
-.mainbody>div{
+.mainbody>div{  
+    display:flex;
     width: 95px;
     height: 50px;
+    border: solid rgb(216, 216, 214);
+    border-width: 2px 0;
     background-color:rgb(216,216,214);
-    margin-left: 1px;
-    margin-right: 1px;
+    margin-left: 15px;
+    margin-right: 15px;
     text-align: center;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     cursor: pointer;
@@ -49,7 +56,6 @@
     padding: 5px;
     background-color: #CAD3C8;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
-    
     
 }
 
@@ -87,7 +93,7 @@
     flex-wrap: wrap;
     justify-content: space-around;
     align-items: center;
-    font-family:"bold";
+    font-weight:500;
 }
 
 .LeviDiv{
