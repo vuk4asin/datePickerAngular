@@ -1,5 +1,5 @@
 import { Component, ComponentFactoryResolver, Input, OnInit } from '@angular/core';
-import { text } from '@fortawesome/fontawesome-svg-core';
+import { library, text } from '@fortawesome/fontawesome-svg-core';
 import { faAngleLeft } from '@fortawesome/free-solid-svg-icons';
 import { faAngleRight } from '@fortawesome/free-solid-svg-icons';
 import { faAddressCard } from '@fortawesome/free-solid-svg-icons';
@@ -159,6 +159,9 @@ export class DatePickerComponent implements OnInit {
     
     }
 
+   
+
+
     Prikazi(){
       this.show = !this.show;
       console.log(this.show);
@@ -167,6 +170,9 @@ export class DatePickerComponent implements OnInit {
     }
 
     
+    
+
+      
 
    
   
@@ -176,4 +182,5 @@ export class DatePickerComponent implements OnInit {
     }, 1);
   }
   
-} 
+}
+ 

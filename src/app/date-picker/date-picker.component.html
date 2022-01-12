@@ -1,5 +1,6 @@
 <div class="container">
     <div class="header">
+  
       <div class="LeviDiv">
         
         <fa-icon class="ikonica" [routerLink]="['/form']"  [icon]="faAddressCard" (click)="reserve()"></fa-icon>
@@ -9,23 +10,38 @@
         <label class="Labela">{{Months[curentD.monthID ].text}}</label>
         <fa-icon [icon]="faAngleRight" (click)="PromeniMesec(1)"></fa-icon>
       </div>
-   
+      
+
       <div class="DesniDiv">
         <input type="number" id="myNumber" step="1" [value]="curentD.year"
          min="2010" (change)="setYear($event)">  
       </div>
-      <form></form>
+
+        
+
+      
+
+      <form>
+        
+      </form>
   </div>
     </div>
    
     <div class="mainbody">
-    
+
+ 
+      
       <div class="PContainer" *ngFor="let Day of DaysI">{{Day.text}}</div>
       
       <div class="PContainer" *ngFor="let Day of DaysII ; let i=index;" (click)="pickAdate($event); Prikazi()">{{Day?.text}}</div>
-     
-      <app-form *ngIf="show"></app-form>      
+      
+      
+      <app-form *ngIf="show">
+ 
+      </app-form>      
     </div>
+    
+    <progress-bar *ngIf="show"></progress-bar>
 
   </div>  
   
