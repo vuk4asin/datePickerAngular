@@ -11,6 +11,8 @@ import { ProgressBarComponent } from './progress-bar/progress-bar.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatSliderModule} from "@angular/material/slider";
 import {MatProgressBarModule} from "@angular/material/progress-bar";
+import { FormsModule } from '@angular/forms';
+import {HttpClientModule} from '@angular/common/http'
 
 
 
@@ -29,6 +31,8 @@ import {MatProgressBarModule} from "@angular/material/progress-bar";
     NgbModule,
     MatProgressBarModule,
     MatSliderModule,
+    FormsModule,
+    HttpClientModule,
    
 
     RouterModule.forRoot([

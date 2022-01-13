@@ -1,23 +1,38 @@
 #Glavni{
   background:rgb(218, 229, 232);
   position: relative;
-  margin-top:50px;
+  margin-top:58px;
   width:450px;
   bottom: 0;
   left:50px;
   right: 400px;
+  animation-duration: 3s;
+  animation-name: slidein;
+}
+@keyframes slidein {
+  from{
+    margin-left: 100%;
+    width:300%;
+  }
+
+  to{
+    margin-left: 10%;
+    width: 100%;
+  }
 }
 body {
     width: 400px;
     height: 190px;
     margin: 0 auto;
     padding: 35px;
+  
   }
 
  
   
   div.elem-group {
     margin: 9px 0;
+  
   }
   
   div.elem-group.inlined {
@@ -25,6 +40,7 @@ body {
     display: inline-block;
     float: left;
     margin-left: 1%;
+
   }
   
   label {
@@ -35,7 +51,7 @@ body {
   }
   
   input, select, textarea {
-    border-radius: 2px;
+    border-radius: 1.5em;
     border: 2px solid #777;
     box-sizing: border-box;
     font-size: 1em;
@@ -67,7 +83,22 @@ body {
     border-radius: 4px;
     cursor: pointer;
   }
-  
-  button:hover {
-    border: 2px solid rgb(84, 109, 138);
+  @keyframes turn {
+    10% {transform: rotateZ(0deg);}
+    55% {transform: rotateZ(360deg);}
+    99% {transform: rotateZ(720deg);
+      background-color: transparent;
+      border-color: #ddd;
+      border-top-color: green ;
+    }
+    100% {border-color: green;
+           background-color: green;}
+
   }
+
+
+  button:focus {
+    border: 2px solid rgb(84, 109, 138);
+    animation: turn 5s linear;
+  }
+

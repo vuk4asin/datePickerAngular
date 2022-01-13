@@ -154,7 +154,6 @@ export class DatePickerComponent implements OnInit {
 
     pickAdate(e: Event){
       console.log((<HTMLDivElement>e.currentTarget).innerHTML);
-      console.log((<HTMLDivElement>e.currentTarget).innerHTML.indexOf);
       (<HTMLDivElement>e.currentTarget).style.backgroundColor = 'rgb(126,155,166)';
     
     }
@@ -164,9 +163,7 @@ export class DatePickerComponent implements OnInit {
 
     Prikazi(){
       this.show = !this.show;
-      console.log(this.show);
       
-      console.log('Pritisnuto')
     }
 
     
