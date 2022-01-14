@@ -6,9 +6,14 @@ import { Component, HostListener, OnInit } from '@angular/core';
   styleUrls: ['./progress-bar.component.css']
 })
 export class ProgressBarComponent implements OnInit {
-  
+ 
+  width:any;
+
   constructor() { 
+
   }
+
+
  
   ngOnInit() {
   }

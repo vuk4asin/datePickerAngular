@@ -1,0 +1,43 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "Day": 10,
+      "name": "Alex",
+      "email": "alex@angular.com",
+      "phone": "060666333",
+      "Adults": "1",
+      "Chldren": "2",
+      "RoomPreference": "Adjacent",
+      "AnythingElse": "Nope"
+    },
+    {
+      "id": 2,
+      "Day": 12,
+      "name": "Brad",
+      "email": "brad@angular.com",
+      "phone": "060222333",
+      "Adults": "3",
+      "Chldren": "0",
+      "RoomPreference": "Adjacent",
+      "AnythingElse": "Some Fresh Air"
+    },
+    {
+      "id": 3,
+      "Day": 20,
+      "name": "Joy",
+      "email": "joy@angular.com",
+      "phone": "0601116333",
+      "Adults": "2",
+      "Chldren": "1",
+      "RoomPreference": "Adjacent",
+      "AnythingElse": "All"
+    },
+    {
+      "id": 4
+    },
+    {
+      "id": 5
+    }
+  ]
+}

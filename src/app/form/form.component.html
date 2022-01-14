@@ -1,11 +1,11 @@
-<form  id="Glavni"  #DatePicker="ngForm" (ngSubmit)="onSubmit(DatePicker.value)" >
+<form action="http://localhost:3000" method="post"  id="Glavni"  #DatePicker="ngForm" (ngSubmit)="onSubmit(DatePicker.value)" >
     <div class="elem-group">
       <label for="name">Your Name</label>
-      <input type="text" id="name" name="visitor_name" [(ngModel)]="valueName" (change)="getName()"  pattern=[A-Z\sa-z]{3,20} required>
+      <input type="text" id="name" name="visitor_name" [(ngModel)]="valueName" (change)="getName()" pattern=[A-Z\sa-z]{3,20} required>
     </div>
     <div class="elem-group">
       <label for="email">Your E-mail</label>
-      <input type="email" id="email" name="visitor_email"  [(ngModel)]="valueEmail" (change)="getEmail()"  required>
+      <input type="email" id="email" name="visitor_email"  [(ngModel)]="valueEmail" (change)="getEmail()" required>
     </div>
     <div class="elem-group">
       <label for="phone">Your Phone</label>
@@ -32,7 +32,7 @@
     <hr>
     <div class="elem-group">
       <label for="message">Anything Else?</label>
-      <textarea id="message" name="visitor_message" placeholder="Tell us anything else that might be important." required></textarea>
+      <textarea id="message" name="visitor_message" placeholder="Tell us anything else that might be important."  [(ngModel)]="valueAnything" (change)="getAnything()"  required></textarea>
     </div>
-    <button type="submit" (click)="Clicked()">Book The Rooms</button>
+    <button type="submit" (click)="postUsers()">Book The Rooms</button>
   </form>

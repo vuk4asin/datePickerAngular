@@ -4,6 +4,7 @@ import { faAngleLeft } from '@fortawesome/free-solid-svg-icons';
 import { faAngleRight } from '@fortawesome/free-solid-svg-icons';
 import { faAddressCard } from '@fortawesome/free-solid-svg-icons';
 import { identity } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
 
 
 
@@ -39,7 +40,7 @@ export class DatePickerComponent implements OnInit {
   public show: boolean=false;
   @Input('width') width!: string;
   @Input('height') height!: string;
-  constructor(){
+  constructor(private http:HttpClient){
 
     this.stepD = 0;
     this.curentD = {} as selectedDate;
@@ -78,7 +79,7 @@ export class DatePickerComponent implements OnInit {
     }
     
     this.SetCalendar();
-
+    
   }
   setCurentDate(){
     const d = new Date();
@@ -91,9 +92,9 @@ export class DatePickerComponent implements OnInit {
     console.log(this.curentD.day);
     const s = this.curentD.monthID + 1  + '-' + this.curentD.day.toString() + '-' + this.curentD.year.toString() ;
     this.curentD.dateT = s;
-
-
   }
+
+
   setYear(e: Event){
     this.curentD.year  = parseInt((<HTMLInputElement>e.currentTarget).value);
   }
@@ -146,38 +147,20 @@ export class DatePickerComponent implements OnInit {
       this.curentD.monthID = this.stepD;
     }
 
-  
-    FresDiv(index : number){
-      let id  = (<HTMLInputElement>document.getElementById('PContainer'+ index)).value;
-      console.log('id :' + id);
-    }
 
     pickAdate(e: Event){
       console.log((<HTMLDivElement>e.currentTarget).innerHTML);
       (<HTMLDivElement>e.currentTarget).style.backgroundColor = 'rgb(126,155,166)';
-    
     }
-
-   
-
 
     Prikazi(){
       this.show = !this.show;
-      
     }
 
-    
-    
-
-      
-
-   
-  
   ngOnInit():void {
     setTimeout(() => {
-      
+  
     }, 1);
   }
   
 }
- 
