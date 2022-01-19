@@ -1,12 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { DatePickerComponent } from './date-picker/date-picker.component';
 import { FormComponent } from './form/form.component';
 
 const routes: Routes = [
-  {
-    component:FormComponent,
-    path:'form'
-  }
+ 
 ];
 
 @NgModule({

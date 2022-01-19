@@ -1,9 +1,12 @@
 import { coerceNumberProperty } from '@angular/cdk/coercion';
-import { Component, ComponentFactoryResolver, OnInit, Output } from '@angular/core';
+import { Component, ComponentFactoryResolver,  ElementRef,  HostListener, Input, OnChanges, OnInit, Output, ViewChild } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { _getFocusedElementPierceShadowDom } from '@angular/cdk/platform';
 import { EventEmitter } from "@angular/core";
-
+import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { faExclamationCircle } from '@fortawesome/free-solid-svg-icons';
+import { faWindowClose } from '@fortawesome/free-solid-svg-icons';
+import { convertToObject } from 'typescript';
 
 
 @Component({
@@ -12,78 +15,87 @@ import { EventEmitter } from "@angular/core";
   styleUrls: ['./form.component.css']
 })
 export class FormComponent implements OnInit {
-
+  @Input('pickedDate') pickedDate?: string;
    httpOptions={
     headers:new HttpHeaders({
       'Content-Type':'application/json'
     })
   }
-
-  users:any;
-  user:any;
-  
-  valueName:any;
-  valueEmail:any;
-  valueNumber:any;
-  valueAdults:any;  
-  valueChildren:any;
-  valueList:any;
-  valueAnything:any;
-
-
-  constructor(private http:HttpClient) {
-    this.users=[]
-    this.user={
-      name: this.valueName,
-      email: this.valueEmail,
-      phone: this.valueNumber,
-      adults: this.valueAdults,
-      children: this.valueChildren,
-      roomPreferences: this.valueList,
-      anything: this.valueAnything
-    };
-   }
-
-  ngOnInit(): void {  
-    this.getUsers()
-  }
-
-  getUsers(){
+ 
+   getUsers(){
     this.http.get('http://localhost:3000/users').subscribe(res=>{
      this.users=res;
      console.log(this.users);
     })
   }
+  users:any;
+  user:any;
+
+  public show:boolean=false;
+  
+  valueName:any;
+  valueSurname:any;
+  valueEmail:any;
+  valuePhone:any;
+  valuePassword:any;
+  valueCheckOut:any;
+  valueCheckIn:any;
+  valuePickedDate=this.pickedDate;
+  
+  
+  
+faWindowClose=faWindowClose;
+
+  constructor( private http:HttpClient,private elementRef: ElementRef) {
+    this.users=[]
+    this.user={
+      name: this.valueName,
+      surname:this.valueSurname,
+      email: this.valueEmail,
+      phone: this.valuePhone,
+      password:this.valuePassword,
+      pickedDate:this.valuePickedDate
+    };
+   }
+
+  ngOnInit(): void {  
+  
+  }
 
   postUsers(){
-    
     this.http.post('http://localhost:3000/users',this.user,this.httpOptions).subscribe((res)=>{
-
-      alert("User Saved");
+       alert("User Saved");
     });
   }
 
   getName(){
     console.log( this.valueName);
   }
+
+  getSurname(){
+    console.log(this.valueSurname)
+  }
+
   getEmail(){
     console.log(this.valueEmail);
   }
-  getNumber(){
-    console.log(this.valueNumber);
+
+  getPhone(){
+    console.log(this.valuePhone);
   }
-  getAdults(){
-    console.log(this.valueAdults);
+  getPassword(){
+    console.log(this.valuePassword)
   }
-  getChildren(){
-    console.log(this.valueChildren);
+  getCheckin(){
+    console.log(this.valueCheckIn)
   }
-  getList(){
-    console.log(this.valueList);
+
+  getCheckOut(){
+    console.log(this.valueCheckOut)
   }
-  getAnything()
-  {
-    console.log(this.valueAnything);
+
+  getPickedDate(){
+    console.log(this.pickedDate)
   }
 
   Clicked()
@@ -94,5 +106,9 @@ export class FormComponent implements OnInit {
   onSubmit(data:any){
     console.warn(data);
   }
+
+  Zatvori(){
+    this.elementRef.nativeElement.remove(); 
+   }
 
 }

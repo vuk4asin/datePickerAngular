@@ -1,38 +1,90 @@
-<form action="http://localhost:3000" method="post"  id="Glavni"  #DatePicker="ngForm" (ngSubmit)="onSubmit(DatePicker.value)" >
-    <div class="elem-group">
-      <label for="name">Your Name</label>
-      <input type="text" id="name" name="visitor_name" [(ngModel)]="valueName" (change)="getName()" pattern=[A-Z\sa-z]{3,20} required>
-    </div>
-    <div class="elem-group">
-      <label for="email">Your E-mail</label>
-      <input type="email" id="email" name="visitor_email"  [(ngModel)]="valueEmail" (change)="getEmail()" required>
-    </div>
-    <div class="elem-group">
-      <label for="phone">Your Phone</label>
-      <input type="tel" id="phone" name="visitor_phone"  pattern=(\d{3})-?\s?(\d{3})-?\s?(\d{4})  [(ngModel)]="valueNumber" (change)="getNumber()" required>
-    </div>
-    <hr>
-    <div class="elem-group inlined">
-      <label for="adult">Adults</label>
-      <input type="number" id="adult" name="total_adults" min="1"  [(ngModel)]="valueAdults" (change)="getAdults()" required>
-    </div>
-    <div class="elem-group inlined">
-      <label for="child">Children</label>
-      <input type="number" id="child" name="total_children"  min="0"  [(ngModel)]="valueChildren" (change)="getChildren()" required>
-    </div>
-    <div class="elem-group">
-      <label for="room-selection">Select Room Preference</label>
-      <select id="room-selection" name="room_preference" [(ngModel)]="valueList" (change)="getList()" required>
-          <option value="">Choose a Room from the List</option>
-          <option value="connecting">Connecting</option>
-          <option value="adjoining">Adjoining</option>
-          <option value="adjacent">Adjacent</option>
-      </select>
-    </div>
-    <hr>
-    <div class="elem-group">
-      <label for="message">Anything Else?</label>
-      <textarea id="message" name="visitor_message" placeholder="Tell us anything else that might be important."  [(ngModel)]="valueAnything" (change)="getAnything()"  required></textarea>
-    </div>
-    <button type="submit" (click)="postUsers()">Book The Rooms</button>
-  </form>
+<div class="modal-body">
+  <form method="post" role="form">      
+    <fa-icon class="icon" [icon]="faWindowClose" (click)="Zatvori()"></fa-icon>               <!-- Password input with required star -->
+    <div class="form-group">
+
+        <label for="name" class="control-label"  id="name" >Name <span class="required-field"></span></label>
+        <div class="has-feedback">
+
+          <input type="name" class="form-control" id="name" name="name"  [(ngModel)]="valueName" (change)="getName()">
+
+        </div>
+       </div>
+
+       <label for="name" class="control-label" id="surname">Surname <span class="required-field"></span></label>
+        <div class="has-feedback">
+
+          <input type="surname" class="form-control" id="surname" name="surname" [(ngModel)]="valueSurname" (change)="getSurname()">
+        </div>
+  
+                                  <!-- Password input with required star -->
+<div class="form-group">
+
+       <label for="mail" class="control-label" id="mail">Email <span class="required-field"></span></label>
+         <div class="has-feedback">
+
+    <input type="email" class="form-control" id="mail" name="mail" [(ngModel)]="valueEmail" (change)="getEmail()">
+  
+     </div>
+ </div>
+
+
+ <div class="form-group">
+
+  <label for="number" class="control-label" id="form_attorneylitigant_login_password_error">Phone <span class="required-field"></span></label>
+    <div class="has-feedback">
+
+    <input type="number" class="form-control" id="number" name="number" [(ngModel)]="valuePhone" (change)="getPhone()"/>
+
+ <span class="fa fa-lock form-control-feedback" aria-hidden="true"></span>
+</div>
+</div>
+
+
+                                  <!-- Password input with required star -->
+    <div class="form-group">
+
+      <label for="password1" class="control-label" id="form_attorneylitigant_login_password_error">Password <span class="required-field"></span></label>
+        <div class="has-feedback">
+
+    <input type="password" class="form-control" id="password" name="password"[(ngModel)]="valuePassword" (change)="getPassword()"/>
+
+      <span class="fa fa-lock form-control-feedback" aria-hidden="true"></span>
+  </div>
+ </div>          
+
+
+ <div class="form-group">
+
+  <label for="checkIn" class="control-label" id="CheckIn">CheckIn <span class="required-field"></span></label>
+    <div class="has-feedback">
+
+<input type="text" class="form-control" id="checkIn" name="CheckIn"[(ngModel)]="valueCheckIn" (change)="getCheckin()"/>
+
+  <span class="fa fa-lock form-control-feedback" aria-hidden="true"></span>
+</div>
+</div>        
+
+
+<div class="form-group">
+
+  <label for="checkOut" class="control-label" id="CheckOut">CheckOut <span class="required-field"></span></label>
+    <div class="has-feedback">
+
+<input type="number" class="form-control" id="checkOut" name="CheckIn"[(ngModel)]="valueCheckOut" (change)="getCheckOut()"/>
+
+  <span class="fa fa-lock form-control-feedback" aria-hidden="true"></span>
+
+  <label class="label" font-Size="1px" >PickedDate   <span></span>  {{pickedDate}} </label>
+</div>
+</div>          
+
+        
+</form>
+      <div class="modal-footer">
+        <button type="submit" class="form-control-btn" (click)="postUsers()">Submit</button>
+  
+      </div> <!-- /.modal-footer -->
+    </div> <!-- /.modal-body -->
+
+

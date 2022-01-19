@@ -8,6 +8,7 @@ import { Component, HostListener, OnInit } from '@angular/core';
 export class ProgressBarComponent implements OnInit {
  
   width:any;
+  
 
   constructor() { 
 

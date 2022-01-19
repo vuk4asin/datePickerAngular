@@ -1,104 +1,80 @@
-#Glavni{
-  background:rgb(218, 229, 232);
-  position: relative;
-  margin-top:58px;
-  width:450px;
-  bottom: 0;
-  left:50px;
-  right: 400px;
-  animation-duration: 3s;
-  animation-name: slidein;
+body{
+  padding: 50px;
 }
-@keyframes slidein {
+.modal-dialog {
+  width: 250px;
+}
+.modal-footer {
+  height: 70px;
+  margin: 0;
+}
+
+.modal-footer .progress {
+  display: none;
+  height: 32px;
+  margin: 0;
+}
+.input-group-addon {
+  color: #fff;
+  background: #3276B1;
+}
+.modal-body {
+  position: relative;
+  flex: 1 1 auto;
+  padding: 1rem;
+  z-index: 100;
+  bottom: 361px;
+  left: 150px;
+  background: rgb(250, 251, 252);
+  width: 340px;
+  height: 400px;
+  animation:  3s ease-in 1s  reverse both running slidetop;
+  flex-direction: row-reverse;
+}
+
+@keyframes slidetop {
   from{
-    margin-left: 100%;
+    margin-right: 100%;
     width:300%;
   }
 
   to{
-    margin-left: 10%;
+    margin-left:10%;
     width: 100%;
   }
 }
-body {
-    width: 400px;
-    height: 190px;
-    margin: 0 auto;
-    padding: 35px;
-  
-  }
 
- 
-  
-  div.elem-group {
-    margin: 9px 0;
-  
-  }
-  
-  div.elem-group.inlined {
-    width: 49%;
-    display: inline-block;
-    float: left;
-    margin-left: 1%;
+.control-label{
+  font-family: sans-serif;
+  font-size: 10px;
+  margin-top: 3px;
+}
 
-  }
-  
-  label {
-    display: block;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;;
-    padding-bottom: 10px;
-    font-size: 1em;
-  }
-  
-  input, select, textarea {
-    border-radius: 1.5em;
-    border: 2px solid #777;
-    box-sizing: border-box;
-    font-size: 1em;
-    font-family: 'Nanum Gothic';
-    width: 100%;
-    padding: 10px;
-  }
-  
-  div.elem-group.inlined input {
-    width: 85%;
-    display: inline-block;
-  }
-  
-  textarea {
-    height: 70px;
-  }
-  
-  hr {
-    border: 1px dotted #ccc;
-  }
-  
-  button {
-    height: 50px;
-    background:rgb(84, 109, 138);
-    border: none;
-    color: white;
-    font-size: 1.0em;
-    font-family: 'Nanum Gothic';
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  @keyframes turn {
-    10% {transform: rotateZ(0deg);}
-    55% {transform: rotateZ(360deg);}
-    99% {transform: rotateZ(720deg);
-      background-color: transparent;
-      border-color: #ddd;
-      border-top-color: green ;
-    }
-    100% {border-color: green;
-           background-color: green;}
+.form-control{
+  border-radius: 1.1em;
+  width:280px
+}
 
-  }
+.form-control-btn{
+  width: 235px;
+  font-size: 12px;
+  font-family:initial;
+  border-radius: 1.1em;
+  border:solid;
+  border-width: 0.5px;
+  border-color: rgb(206, 222, 221);
+  left:110px;
+  cursor: pointer;
 
+}
 
-  button:focus {
-    border: 2px solid rgb(84, 109, 138);
-    animation: turn 5s linear;
-  }
+.icon{
+  cursor: pointer;
+  z-index: 2;
+  font-size: 22px;
+}
 
+.label{
+  font-size: 12px;
+  font-weight:unset
+}

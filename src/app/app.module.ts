@@ -36,7 +36,7 @@ import {HttpClientModule} from '@angular/common/http'
    
 
     RouterModule.forRoot([
-      {path: 'form', component: FormComponent}
+      {path: 'users', component: FormComponent}
     ]),
  
     BrowserAnimationsModule

@@ -2,8 +2,8 @@
     <div class="header">
   
       <div class="LeviDiv">
-        
-        <fa-icon class="ikonica" [routerLink]="['/form']"  [icon]="faAddressCard" (click)="reserve()"></fa-icon>
+
+        <fa-icon class="ikonica"  [icon]="faAddressCard"></fa-icon>
     
       <div class="CentralniDiv">
         <fa-icon [icon]="faAngleLeft" (click)="PromeniMesec(-1)"></fa-icon>
@@ -17,31 +17,21 @@
          min="2010" (change)="setYear($event)">  
       </div>
 
-        
-
-      
-
-      <form>
-        
-      </form>
   </div>
     </div>
    
     <div class="mainbody">
-
- 
-      
-      <div class="PContainer" *ngFor="let Day of DaysI">{{Day.text}}</div>
-      
+      <div class="PContainer" *ngFor="let Day of DaysI">{{Day.text}}</div> 
       <div class="PContainer" *ngFor="let Day of DaysII ; let i=index;" (click)="pickAdate($event); Prikazi()">{{Day?.text}}</div>
-      
-      
-      <app-form *ngIf="show">
- 
-      </app-form>      
     </div>
     
     <progress-bar *ngIf="show"></progress-bar>
-
+    
   </div>  
-  
+  <div class="appFormDiv">
+
+    <app-form *ngIf="show" [pickedDate]="picked"></app-form>      
+    
+  </div>
+
+

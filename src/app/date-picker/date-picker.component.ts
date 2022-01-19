@@ -5,6 +5,7 @@ import { faAngleRight } from '@fortawesome/free-solid-svg-icons';
 import { faAddressCard } from '@fortawesome/free-solid-svg-icons';
 import { identity } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
+import { ColdObservable } from 'rxjs/internal/testing/ColdObservable';
 
 
 
@@ -27,26 +28,30 @@ export interface Days{
   styleUrls: ['./date-picker.component.css']
 })
 export class DatePickerComponent implements OnInit {
+
   title = 'DatePicker';
   public Months: any[];
   public DaysI: any[];
   faAngleLeft=faAngleLeft;
   faAngleRight=faAngleRight;
   faAddressCard=faAddressCard;
-
+  public picked: string;
   public curentD: selectedDate;
   public DaysII:Days[];
   public stepD: number;
   public show: boolean=false;
   @Input('width') width!: string;
   @Input('height') height!: string;
-  constructor(private http:HttpClient){
 
+
+
+  constructor(private http:HttpClient){
+    this.picked = "";
     this.stepD = 0;
     this.curentD = {} as selectedDate;
     this.setCurentDate();
-   
-  
+    
+
     this.Months= [
       {id: 1, text: 'January'},
       {id: 2, text: 'February'},
@@ -79,8 +84,8 @@ export class DatePickerComponent implements OnInit {
     }
     
     this.SetCalendar();
-    
   }
+
   setCurentDate(){
     const d = new Date();
     this.curentD.monthID = d.getMonth()   ;
@@ -99,9 +104,7 @@ export class DatePickerComponent implements OnInit {
     this.curentD.year  = parseInt((<HTMLInputElement>e.currentTarget).value);
   }
   
-  reserve(){
-    console.log('click')
-  }
+
 
     SetCalendar(d?:Date){
       let dTemp: Date;
@@ -147,14 +150,15 @@ export class DatePickerComponent implements OnInit {
       this.curentD.monthID = this.stepD;
     }
 
-
     pickAdate(e: Event){
-      console.log((<HTMLDivElement>e.currentTarget).innerHTML);
+      let el = (<HTMLDivElement>e.currentTarget);
+      this.picked = el.innerHTML;
+      console.log(el.innerHTML);
       (<HTMLDivElement>e.currentTarget).style.backgroundColor = 'rgb(126,155,166)';
     }
 
     Prikazi(){
-      this.show = !this.show;
+      this.show =!this.show;
     }
 
   ngOnInit():void {
