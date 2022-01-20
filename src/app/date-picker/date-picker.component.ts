@@ -40,6 +40,7 @@ export class DatePickerComponent implements OnInit {
   public DaysII:Days[];
   public stepD: number;
   public show: boolean=false;
+  public clicked: boolean=false;
   @Input('width') width!: string;
   @Input('height') height!: string;
 
@@ -153,6 +154,7 @@ export class DatePickerComponent implements OnInit {
     pickAdate(e: Event){
       let el = (<HTMLDivElement>e.currentTarget);
       this.picked = el.innerHTML;
+      this.clicked = true;
       console.log(el.innerHTML);
       (<HTMLDivElement>e.currentTarget).style.backgroundColor = 'rgb(126,155,166)';
     }

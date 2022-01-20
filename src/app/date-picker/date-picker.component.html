@@ -23,12 +23,8 @@
     <div class="mainbody">
       <div class="PContainer" *ngFor="let Day of DaysI">{{Day.text}}</div> 
       <div class="PContainer" *ngFor="let Day of DaysII ; let i=index;" (click)="pickAdate($event); Prikazi()">{{Day?.text}}</div>
-    </div>
-    
-    <progress-bar *ngIf="show"></progress-bar>
-    
-  </div>  
-  <div class="appFormDiv">
+  
+
 
     <app-form *ngIf="show" [pickedDate]="picked"></app-form>      
     

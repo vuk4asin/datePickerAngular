@@ -16,6 +16,7 @@ import { convertToObject } from 'typescript';
 })
 export class FormComponent implements OnInit {
   @Input('pickedDate') pickedDate?: string;
+  
    httpOptions={
     headers:new HttpHeaders({
       'Content-Type':'application/json'
