@@ -5,6 +5,7 @@
     zoom:9 /* ie fix */;
 }
 
+
 .container:after {
     clear:both;
 }
@@ -66,7 +67,6 @@
     padding: 5px;
     background-color: #CAD3C8;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
-    
 }
 
 .DesniDiv{
@@ -97,13 +97,13 @@
     flex-direction: row-reverse
 }
 
+
 .PContainer{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
     align-items: center;
     font-family:unset;
-
 }
 
 .LeviDiv{

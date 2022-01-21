@@ -106,6 +106,7 @@ faWindowClose=faWindowClose;
 
   onSubmit(data:any){
     console.warn(data);
+    
   }
 
   Zatvori(){

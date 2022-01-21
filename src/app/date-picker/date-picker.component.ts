@@ -8,8 +8,6 @@ import { HttpClient } from '@angular/common/http';
 import { ColdObservable } from 'rxjs/internal/testing/ColdObservable';
 
 
-
-
 export interface selectedDate{
   monthID: number,
   year: number,
