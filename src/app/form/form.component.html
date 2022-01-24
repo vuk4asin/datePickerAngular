@@ -21,7 +21,7 @@
                                   <!-- Password input with required star -->
 <div class="form-group">
 
-       <label for="mail" class="control-label" id="mail">Email <span class="required-field"></span></label>
+       <label for="email" class="control-label" id="email">Email <span class="required-field"></span></label>
          <div class="has-feedback">
 
     <input type="email" class="form-control" id="mail" name="mail" [(ngModel)]="valueEmail" (change)="getEmail()">
@@ -61,7 +61,7 @@
   <label for="checkOut" class="control-label" id="CheckOut">CheckOut <span class="required-field"></span></label>
 <div class="has-feedback">
 
-<input type="number" class="form-control" id="checkOut" name="CheckIn"[(ngModel)]="valueCheckOut" (change)="getCheckOut()"/>
+<input type="text" class="form-control" id="checkOut" name="CheckOut"[(ngModel)]="valueCheckOut" (change)="getCheckOut()"/>
 
   <span class="fa fa-lock form-control-feedback" aria-hidden="true"></span>
 
@@ -74,7 +74,7 @@
       </div>
 
       <div class="modal-footer">
-        <button type="submit" class="form-control-btn" (click)="postUsers()">Confirmation Reserve</button>
+        <button type="submit" class="form-control-btn" (click)="CheckField()">Confirmation Reserve</button>
   
       </div> <!-- /.modal-footer -->
 

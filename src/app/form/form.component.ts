@@ -15,6 +15,7 @@ import { convertToObject } from 'typescript';
   styleUrls: ['./form.component.css']
 })
 export class FormComponent implements OnInit {
+  [x: string]: any;
   @Input('pickedDate') pickedDate?: string;
   
    httpOptions={
@@ -42,9 +43,7 @@ export class FormComponent implements OnInit {
   valueCheckOut:any;
   valueCheckIn:any;
   valuePickedDate=this.pickedDate;
-  
-  
-  
+    
 faWindowClose=faWindowClose;
 
   constructor( private http:HttpClient,private elementRef: ElementRef) {
@@ -108,6 +107,15 @@ faWindowClose=faWindowClose;
     console.warn(data);
     
   }
+
+  CheckField(){
+    if(this.valueName!=='' && this.valueSurname!=='' && this.valueEmail!==''){
+      const el = document.querySelectorAll('form-control');
+      console.log(el);
+    }
+  }
+
+  
 
   Zatvori(){
     this.elementRef.nativeElement.remove(); 

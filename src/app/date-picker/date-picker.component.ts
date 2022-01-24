@@ -151,10 +151,15 @@ export class DatePickerComponent implements OnInit {
 
     pickAdate(e: Event){
       let el = (<HTMLDivElement>e.currentTarget);
+      if(el){
       this.picked = el.innerHTML;
       this.clicked = true;
       console.log(el.innerHTML);
       (<HTMLDivElement>e.currentTarget).style.backgroundColor = 'rgb(126,155,166)';
+      }
+      else {
+        (<HTMLDivElement>e.currentTarget).style.backgroundColor = 'rgb(216,216,214)';
+      }
     }
 
     Prikazi(){
