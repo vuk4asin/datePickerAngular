@@ -9,13 +9,14 @@ import { faWindowClose } from '@fortawesome/free-solid-svg-icons';
 import { convertToObject } from 'typescript';
 
 
+
 @Component({
   selector: 'app-form',
   templateUrl: './form.component.html',
   styleUrls: ['./form.component.css']
 })
 export class FormComponent implements OnInit {
-  [x: string]: any;
+
   @Input('pickedDate') pickedDate?: string;
   
    httpOptions={
@@ -105,7 +106,6 @@ faWindowClose=faWindowClose;
 
   onSubmit(data:any){
     console.warn(data);
-    
   }
 
   CheckField(){
@@ -115,10 +115,16 @@ faWindowClose=faWindowClose;
     }
   }
 
-  
+  CheckAllField(){
+    if(this.valuePhone!=='' && this.valuePassword!=='' && this.valueCheckIn!=='' && this.valueCheckOut!==''){
+      
+    }
+  }
 
   Zatvori(){
     this.elementRef.nativeElement.remove(); 
    }
+
+   ChangeStep(){}
 
 }

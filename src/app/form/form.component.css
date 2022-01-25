@@ -23,11 +23,11 @@ body{
   flex: 1 1 auto;
   z-index: 100;
   bottom: 361px;
-  margin-left: 0%;
-  margin-right: 12%;
-  width: 250px;
+  margin-left: 1%;
+  margin-right: 10%;
+  width: 200px;
   animation:  2s ease-in 1s  reverse both running slidetop;
-  left : -200px
+  left : -195px
 }
 
 
@@ -65,7 +65,7 @@ body{
   border-color: rgb(245, 250, 250);
   left:110px;
   cursor: pointer;
-  animation: fill .4s ease-in-out .4s forwards, scale .3s ease-in-out .9s both;
+
 }
 
 @keyframes stroke {
@@ -73,7 +73,6 @@ body{
       stroke-dashoffset: 0;
   }
 }
-
 
 .icon{
   cursor: pointer;
@@ -91,8 +90,6 @@ body{
 .Form{
   background-color:rgb(224, 224, 224);
 }
-
-
 
 .success-animation { margin:150px auto;}
 
