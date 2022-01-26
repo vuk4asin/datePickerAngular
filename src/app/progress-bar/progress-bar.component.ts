@@ -16,7 +16,6 @@ export class ProgressBarComponent implements OnInit {
   
   ngOnInit() {
     this.ActiveStep();
-    this.formComponent.CheckAllField();
   }
 
   ActiveStep(){

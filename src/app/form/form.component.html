@@ -1,5 +1,5 @@
 <div class="modal-body">
-  <form method="post" role="form" class="Form">      
+  <form class="Form" (ngSubmit)="onSubmit()">      
          
     <fa-icon class="icon" [icon]="faWindowClose" (click)="Zatvori()"></fa-icon>               <!-- Password input with required star -->
     <div class="form-group">
@@ -7,7 +7,7 @@
         <label for="name" class="control-label"  id="name" >Name <span class="required-field"></span></label>
         <div class="has-feedback">
 
-          <input type="name" class="form-control" id="name" name="name"  [(ngModel)]="valueName" (change)="getName()">
+          <input type="name" class="form-control" id="name" name="name"  [(ngModel)]="name" (change)="getName()">
 
         </div>
        </div>
@@ -15,7 +15,7 @@
        <label for="name" class="control-label" id="surname">Surname <span class="required-field"></span></label>
         <div class="has-feedback">
 
-          <input type="surname" class="form-control" id="surname" name="surname" [(ngModel)]="valueSurname" (change)="getSurname()">
+          <input type="surname" class="form-control" id="surname" name="surname" [(ngModel)]="surname" (change)="getSurname()">
         </div>
   
                                   <!-- Password input with required star -->
@@ -24,7 +24,7 @@
        <label for="email" class="control-label" id="email">Email <span class="required-field"></span></label>
          <div class="has-feedback">
 
-    <input type="email" class="form-control" id="mail" name="mail" [(ngModel)]="valueEmail" (change)="getEmail()">
+    <input type="email" class="form-control" id="mail" name="mail" [(ngModel)]="email" (change)="getEmail()">
   
      </div>
  </div>
@@ -35,7 +35,7 @@
   <label for="number" class="control-label" id="form_attorneylitigant_login_password_error">Phone <span class="required-field"></span></label>
     <div class="has-feedback">
 
-    <input type="number" class="form-control" id="number" name="number" [(ngModel)]="valuePhone" (change)="getPhone()"/>
+    <input type="number" class="form-control" id="number" name="number" [(ngModel)]="phone" (change)="getPhone()"/>
 
  <span class="fa fa-lock form-control-feedback" aria-hidden="true"></span>
 </div>
@@ -44,7 +44,7 @@
       <label for="password1" class="control-label" id="form_attorneylitigant_login_password_error">Password <span class="required-field"></span></label>
         <div class="has-feedback">
 
-    <input type="password" class="form-control" id="password" name="password"[(ngModel)]="valuePassword" (change)="getPassword()"/>
+    <input type="password" class="form-control" id="password" name="password"[(ngModel)]="password" (change)="getPassword()"/>
 
       <span class="fa fa-lock form-control-feedback" aria-hidden="true"></span>
   </div>
@@ -52,7 +52,7 @@
   <label for="checkIn" class="control-label" id="CheckIn">CheckIn <span class="required-field"></span></label>
     <div class="has-feedback">
 
-<input type="text" class="form-control" id="checkIn" name="CheckIn"[(ngModel)]="valueCheckIn" (change)="getCheckin()"/>
+<input type="text" class="form-control" id="checkIn" name="CheckIn"[(ngModel)]="CheckIn" (change)="getCheckin()"/>
 
   <span class="fa fa-lock form-control-feedback" aria-hidden="true"></span>
 </div>
@@ -61,7 +61,7 @@
   <label for="checkOut" class="control-label" id="CheckOut">CheckOut <span class="required-field"></span></label>
 <div class="has-feedback">
 
-<input type="text" class="form-control" id="checkOut" name="CheckOut"[(ngModel)]="valueCheckOut" (change)="getCheckOut()"/>
+<input type="text" class="form-control" id="checkOut" name="CheckOut"[(ngModel)]="CheckOut" (change)="getCheckOut()"/>
 
   <span class="fa fa-lock form-control-feedback" aria-hidden="true"></span>
 
@@ -74,7 +74,7 @@
       </div>
 
       <div class="modal-footer">
-        <button type="submit" class="form-control-btn" (click)="CheckField()">Confirmation Reserve</button>
+        <button type="submit" class="form-control-btn" (click)="onAddUser">Confirmation Reserve</button>
   
       </div> <!-- /.modal-footer -->
 

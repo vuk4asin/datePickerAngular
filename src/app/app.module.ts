@@ -12,7 +12,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatSliderModule} from "@angular/material/slider";
 import {MatProgressBarModule} from "@angular/material/progress-bar";
 import { FormsModule } from '@angular/forms';
-import {HttpClientModule} from '@angular/common/http'
+import {HttpClientModule} from '@angular/common/http';
+import { UserComponent } from './user/user.component'
 
 
 
@@ -22,7 +23,8 @@ import {HttpClientModule} from '@angular/common/http'
     AppComponent,
     FormComponent,
     DatePickerComponent,
-    ProgressBarComponent
+    ProgressBarComponent,
+    UserComponent
   ],
   imports: [
     BrowserModule,
