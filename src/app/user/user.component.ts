@@ -1,5 +1,7 @@
 import { Component, OnInit ,Input} from '@angular/core';
 import { CheckboxControlValueAccessor } from '@angular/forms';
+import { NgModule } from '@angular/core';
+
 
 @Component({
   selector: 'app-user',
@@ -7,21 +9,13 @@ import { CheckboxControlValueAccessor } from '@angular/forms';
   styleUrls: ['./user.component.css']
 })
 export class UserComponent implements OnInit {
-  @Input('pickedDate') pickedDate?: string;
 
-  name?:string;
-  surname?: string;
-  email?:string;
-  phone?:number;
-  password?: number;
-  CheckIn?:number;
-  CheckOut?:number;
-  PickedDate?:string;
-
+  
   constructor() {
    }
 
   ngOnInit(): void {
+    
   }
 
    

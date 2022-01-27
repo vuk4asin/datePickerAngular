@@ -1,5 +1,5 @@
 <div class="modal-body">
-  <form class="Form" (ngSubmit)="onSubmit()">      
+  <form class="Form" (ngSubmit)="onSubmit">      
          
     <fa-icon class="icon" [icon]="faWindowClose" (click)="Zatvori()"></fa-icon>               <!-- Password input with required star -->
     <div class="form-group">
@@ -67,18 +67,16 @@
 
   <label class="label">PickedDate <span> </span>  {{pickedDate}}  January </label>
 </div>
-        
-
       <div class="Progres-Bar">
         <progress-bar></progress-bar>
       </div>
 
       <div class="modal-footer">
-        <button type="submit" class="form-control-btn" (click)="onAddUser">Confirmation Reserve</button>
+        <button type="submit" class="form-control-btn" (click)="onSubmit()">Confirmation Reserve</button>
   
       </div> <!-- /.modal-footer -->
 
-  </form>
+ </form>
 
 
   <div class="success-animation">

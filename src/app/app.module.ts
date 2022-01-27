@@ -13,7 +13,7 @@ import {MatSliderModule} from "@angular/material/slider";
 import {MatProgressBarModule} from "@angular/material/progress-bar";
 import { FormsModule } from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
-import { UserComponent } from './user/user.component'
+import { UserComponent } from './user/user.component';
 
 
 
@@ -24,7 +24,7 @@ import { UserComponent } from './user/user.component'
     FormComponent,
     DatePickerComponent,
     ProgressBarComponent,
-    UserComponent
+    UserComponent,
   ],
   imports: [
     BrowserModule,
@@ -34,15 +34,9 @@ import { UserComponent } from './user/user.component'
     MatProgressBarModule,
     MatSliderModule,
     FormsModule,
-    HttpClientModule,
-   
-
-    RouterModule.forRoot([
-      {path: 'users', component: FormComponent}
-    ]),
- 
-    BrowserAnimationsModule
+    HttpClientModule
   ],
+
   providers: [],
   bootstrap: [AppComponent]
 })

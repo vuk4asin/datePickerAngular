@@ -84,7 +84,7 @@ export class DatePickerComponent implements OnInit {
     
     this.SetCalendar();
   }
-
+ 
   setCurentDate(){
     const d = new Date();
     this.curentD.monthID = d.getMonth()   ;

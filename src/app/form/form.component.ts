@@ -5,9 +5,7 @@ import { _getFocusedElementPierceShadowDom } from '@angular/cdk/platform';
 import { EventEmitter } from "@angular/core";
 import { faExclamationCircle } from '@fortawesome/free-solid-svg-icons';
 import { faWindowClose } from '@fortawesome/free-solid-svg-icons';
-import { convertToObject } from 'typescript';
-import { LEADING_TRIVIA_CHARS } from '@angular/compiler/src/render3/view/template';
-import { UserComponent } from '../user/user.component';
+import { UserService } from '../user-service';
 
 
 
@@ -19,7 +17,7 @@ import { UserComponent } from '../user/user.component';
 export class FormComponent implements OnInit {
 
   @Input('pickedDate') pickedDate?: string;
-  @Output() onAddUser: EventEmitter<UserComponent>=new EventEmitter()
+
   
   public show:boolean=false;
   
@@ -32,10 +30,10 @@ export class FormComponent implements OnInit {
   CheckOut?:number;
 
 
-faWindowClose=faWindowClose;
-newUser: UserComponent | undefined;
+  
+  faWindowClose=faWindowClose;
 
-  constructor( private http:HttpClient,private elementRef: ElementRef) {
+  constructor( private service:UserService,private elementRef: ElementRef) {
 
    }
 
@@ -83,17 +81,21 @@ newUser: UserComponent | undefined;
       alert("Please fill name");
     }
     
-    const newUser = {
-      name:this.name || undefined,
-      surname:this.surname || undefined,
-      email:this.email || undefined,
-      phone:this.phone || undefined, 
-      CheckIn:this.CheckIn || undefined,
-      CheckOut:this.CheckOut || undefined
+    const User:any = {
+      name:this.name,
+      surname:this.surname,
+      email:this.email,
+      phone:this.phone,
+      password:this.password,
+      CheckIn:this.CheckIn,
+      CheckOut:this.CheckOut,
+      pickedDate:this.pickedDate
     }
-
-    this.onAddUser.emit(this.newUser)
+    console.log(User);
+    this.service.reserveUser(User);
   }
+
+ 
   
   Zatvori(){
     this.elementRef.nativeElement.remove(); 

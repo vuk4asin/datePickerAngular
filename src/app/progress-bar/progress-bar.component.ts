@@ -13,7 +13,6 @@ export class ProgressBarComponent implements OnInit {
   constructor(private formComponent: FormComponent) { 
   }
 
-  
   ngOnInit() {
     this.ActiveStep();
   }
