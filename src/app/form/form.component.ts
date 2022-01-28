@@ -21,6 +21,7 @@ export class FormComponent implements OnInit {
   
   public show:boolean=false;
   
+  id?:number;
   name?:string;
   surname?:string;
   email?:string;
@@ -29,7 +30,7 @@ export class FormComponent implements OnInit {
   CheckIn?:number;
   CheckOut?:number;
 
-
+  users=[];
   
   faWindowClose=faWindowClose;
 
@@ -81,7 +82,7 @@ export class FormComponent implements OnInit {
       alert("Please fill name");
     }
     
-    const User:any = {
+    const User =  {
       name:this.name,
       surname:this.surname,
       email:this.email,
@@ -93,10 +94,10 @@ export class FormComponent implements OnInit {
     }
     console.log(User);
     this.service.reserveUser(User);
+    alert("Succsefully added");
   }
 
- 
-  
+
   Zatvori(){
     this.elementRef.nativeElement.remove(); 
    }

@@ -20,26 +20,22 @@ export class UserService {
 
 private apiUrl='http://localhost:5000/users'
  
+ users=[];
+
 
   constructor(private http:HttpClient ) {}
 
   
   getUser(){
-    const users=[]
     this.http.get('http://localhost:5000/users').subscribe(res=>{
+      res=this.users
       console.log(res);
     })
   }
 
-  reserveUser( user:any){
-
-      try{
-       this.http.post(this.apiUrl,user,this.httpOptions)
-      }
-      catch{
-        console.log("Lose je nesto :D");  
-      }
-    
+  reserveUser(User:any){
+     
+       return this.http.post(this.apiUrl,User,this.httpOptions)
   }
   
   
