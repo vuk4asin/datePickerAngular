@@ -103,8 +103,6 @@ export class DatePickerComponent implements OnInit {
     this.curentD.year  = parseInt((<HTMLInputElement>e.currentTarget).value);
   }
   
-
-
     SetCalendar(d?:Date){
       let dTemp: Date;
       let startDay: string;

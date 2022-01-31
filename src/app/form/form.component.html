@@ -65,10 +65,10 @@
 
   <span class="fa fa-lock form-control-feedback" aria-hidden="true"></span>
 
-  <label class="label">PickedDate <span> </span>  {{pickedDate}}  January </label>
+  <label class="label">PickedDate: <span> </span>  {{pickedDate}} January</label>
 </div>
       <div class="Progres-Bar">
-        <progress-bar></progress-bar>
+        <progress-bar [popuna]=true [popuna1]=false ></progress-bar>
       </div>
       <div class="modal-footer">
         <button type="submit" class="form-control-btn" (click)="onSubmit()">Confirmation Reserve</button>

@@ -19,8 +19,7 @@ export class UserService {
   }
 
 private apiUrl='http://localhost:5000/users'
- 
- users=[];
+
 
 
   constructor(private http:HttpClient ) {}
@@ -28,14 +27,15 @@ private apiUrl='http://localhost:5000/users'
   
   getUser(){
     this.http.get('http://localhost:5000/users').subscribe(res=>{
-      res=this.users
       console.log(res);
     })
   }
 
   reserveUser(User:any){
      
-       return this.http.post(this.apiUrl,User,this.httpOptions)
+       return this.http.post<any>(this.apiUrl,User,this.httpOptions).subscribe(res=>{
+         alert("Registration succsesfull");
+       })
   }
   
   

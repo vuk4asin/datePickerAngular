@@ -7,7 +7,7 @@
       "email": "sebastian@codingthesmartway.com",
       "phone": "060444888",
       "password": "12345",
-      "CheckIn" : "10",
+      "CheckIn": "10",
       "CheckOut": "12",
       "PickedDate": "10"
     },
@@ -18,7 +18,7 @@
       "email": "sebastian@codingthesmartway.com",
       "phone": "060444888",
       "password": "12345",
-      "CheckIn" : "10",
+      "CheckIn": "10",
       "CheckOut": "12",
       "PickedDate": "15"
     },
@@ -29,9 +29,36 @@
       "email": "sebastian@codingthesmartway.com",
       "phone": "060444888",
       "password": "12345",
-      "CheckIn" : "10",
+      "CheckIn": "10",
       "CheckOut": "12",
       "PickedDate": "11"
+    },
+    {
+      "name": "Bracky",
+      "surname": "Soul",
+      "email": "bracky@nesto.com",
+      "phone": 123456,
+      "password": "123456",
+      "CheckIn": "1",
+      "CheckOut": "12",
+      "pickedDate": "1",
+      "id": 4
+    },
+    {
+      "name": "asd",
+      "pickedDate": "8",
+      "id": 5
+    },
+    {
+      "name": "Audi",
+      "pickedDate": "31",
+      "id": 6
+    },
+    {
+      "name": "Alexander",
+      "surname": "Schmidt",
+      "pickedDate": "8",
+      "id": 7
     }
   ]
 }

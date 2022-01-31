@@ -18,7 +18,8 @@ export class FormComponent implements OnInit {
 
   @Input('pickedDate') pickedDate?: string;
 
-  
+  popuna:boolean=false;
+  popuna1: boolean=false;
   public show:boolean=false;
   
   id?:number;
@@ -30,16 +31,16 @@ export class FormComponent implements OnInit {
   CheckIn?:number;
   CheckOut?:number;
 
-  users=[];
   
   faWindowClose=faWindowClose;
+
+  
 
   constructor( private service:UserService,private elementRef: ElementRef) {
 
    }
 
   ngOnInit(): void {  
-  
   }
 
   getName(){
@@ -94,14 +95,28 @@ export class FormComponent implements OnInit {
     }
     console.log(User);
     this.service.reserveUser(User);
-    alert("Succsefully added");
   }
-
 
   Zatvori(){
     this.elementRef.nativeElement.remove(); 
    }
 
-   ChangeStep(){}
-
+  CheckField(){
+    if(this.name!=='' && this.surname!=='' && this.email!=='' && this.phone!=0){
+      this.popuna=true;
+    }
+    else{
+      this.popuna=false;
+    }
+  }
+  
+  CheckAllFields(){
+    if(this.password!==0 && this.CheckIn!==0 && this.CheckOut!== 0){
+      this.popuna1=true;
+  }
+  else{
+    this.popuna1=false;
+  }
 }
+
+} 
