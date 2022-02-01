@@ -32,7 +32,6 @@ private apiUrl='http://localhost:5000/users'
   }
 
   reserveUser(User:any){
-     
        return this.http.post<any>(this.apiUrl,User,this.httpOptions).subscribe(res=>{
          alert("Registration succsesfull");
        })

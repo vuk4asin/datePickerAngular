@@ -1,64 +1,41 @@
 {
   "users": [
     {
-      "id": 1,
-      "username": "Sebastian",
-      "surrname": "Eschweiler",
-      "email": "sebastian@codingthesmartway.com",
-      "phone": "060444888",
-      "password": "12345",
-      "CheckIn": "10",
-      "CheckOut": "12",
-      "PickedDate": "10"
-    },
-    {
-      "id": 2,
-      "username": "Alex",
-      "surrname": "Eschweiler",
-      "email": "sebastian@codingthesmartway.com",
-      "phone": "060444888",
-      "password": "12345",
-      "CheckIn": "10",
-      "CheckOut": "12",
-      "PickedDate": "15"
-    },
-    {
-      "id": 3,
-      "username": "Ben",
-      "surrname": "Eschweiler",
-      "email": "sebastian@codingthesmartway.com",
-      "phone": "060444888",
-      "password": "12345",
-      "CheckIn": "10",
-      "CheckOut": "12",
-      "PickedDate": "11"
-    },
-    {
-      "name": "Bracky",
-      "surname": "Soul",
-      "email": "bracky@nesto.com",
-      "phone": 123456,
+      "name": "Alonso",
+      "surname": "Secret",
+      "email": "audi@audi.com",
+      "phone": 65555989,
       "password": "123456",
-      "CheckIn": "1",
+      "CheckIn": "2",
       "CheckOut": "12",
-      "pickedDate": "1",
-      "id": 4
-    },
-    {
-      "name": "asd",
-      "pickedDate": "8",
-      "id": 5
-    },
-    {
-      "name": "Audi",
       "pickedDate": "31",
-      "id": 6
+      "id": 8
     },
     {
-      "name": "Alexander",
-      "surname": "Schmidt",
-      "pickedDate": "8",
-      "id": 7
+      "name": "Brad",
+      "surname": "Trump",
+      "email": "trump@trump.com",
+      "phone": 60889965,
+      "password": "123456789",
+      "CheckIn": "11",
+      "CheckOut": "22",
+      "pickedDate": "14",
+      "id": 9
+    },
+    {
+      "name": "A",
+      "surname": "B",
+      "email": "neko@nesto.com",
+      "pickedDate": "15",
+      "id": 10
+    },
+    {
+      "phone": 123,
+      "password": "1234",
+      "CheckIn": "12",
+      "CheckOut": "22",
+      "pickedDate": "7",
+      "id": 11
     }
   ]
 }

@@ -1,4 +1,4 @@
-import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
+
 import { Component, HostListener, Input, OnInit } from '@angular/core'
 import { FormComponent } from '../form/form.component';
 
@@ -16,7 +16,8 @@ export class ProgressBarComponent implements OnInit {
   }
 
   ngOnInit() {
-   
+   this.formComponent.CheckField();
+   this.formComponent.CheckAllFields();
   }
 
  

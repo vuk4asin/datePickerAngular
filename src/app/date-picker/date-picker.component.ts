@@ -127,7 +127,6 @@ export class DatePickerComponent implements OnInit {
       n.text="1";
       let k = this.DaysII[34];
       k.text="2";
-
     }
 
     PromeniMesec(step: number){

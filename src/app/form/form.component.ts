@@ -34,13 +34,13 @@ export class FormComponent implements OnInit {
   
   faWindowClose=faWindowClose;
 
-  
 
   constructor( private service:UserService,private elementRef: ElementRef) {
 
    }
 
   ngOnInit(): void {  
+   
   }
 
   getName(){
@@ -73,15 +73,12 @@ export class FormComponent implements OnInit {
     console.log(this.pickedDate)
   }
 
-  Clicked()
-  {
-    console.log("klik")
-  }
-
   onSubmit(){
     if(!this.name){
       alert("Please fill name");
+      
     }
+
     
     const User =  {
       name:this.name,
@@ -102,21 +99,25 @@ export class FormComponent implements OnInit {
    }
 
   CheckField(){
-    if(this.name!=='' && this.surname!=='' && this.email!=='' && this.phone!=0){
-      this.popuna=true;
+    if(!this.name && !this.surname && !this.email && !this.phone){
+      this.popuna=false;
+      console.log("Nije popunjeno")
     }
     else{
-      this.popuna=false;
+      this.popuna=true;
+      console.log("Popunjeno je")
     }
   }
   
   CheckAllFields(){
-    if(this.password!==0 && this.CheckIn!==0 && this.CheckOut!== 0){
+    if(!this.password && !this.CheckIn && !this.CheckOut){
+      this.popuna1=false;
+      console.log("Nije popunjeno dole")
+    }
+     else{
       this.popuna1=true;
+      console.log("Popunjneno je dole")
+    }
   }
-  else{
-    this.popuna1=false;
-  }
-}
 
 } 
